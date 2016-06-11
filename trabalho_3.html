@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Cadastro de clientes</title>
+	<link rel="stylesheet" type="text/css" href="arquivo.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link  rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	<script type = "text/javascript" src = "bootstrap-3.3.6-dist/js/jquery.mask.js" language = "javascript"></script>
+	<script type = "text/javascript" src = "bootstrap-3.3.6-dist/js/jquery.mask.min.js" language = "javascript"></script>
+	<script src="bootstrap-3.3.6-dist/js/jquery-1.12.4.min.js"></script>
+	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script language="javascript" src="enviar.js"></script>
+</head>
+<body onload="desabilitaBtnValores()">
+	<div class="container" id="corpo">
+		<br>
+		<form name="form1" action=""  method="get" class="form-horizontal">
+			<div class="row" id="head">
+				<div class="col-md-12">
+					<h1 id="titulo"> Cadastro de clientes </h1>
+				</div>
+			</div>
+			<div class="container-fluid" id="form">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="nomet" class="control-label"> Nome: </label>
+							<input type="text" class="form-control" size="80" id="nomet"  onkeypress="return soLetras(event)" placeholder="Nome"/>
+						</div>	
+					</div>
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-3">	
+						<div class="form-group">
+							<label for="cpf" class="control-label"> CPF: </label>
+							<input type="text" placeholder="Cpf" class="form-control" size="14" id="cpft"  maxlength="14" onkeypress="mascara(this,'###.###.###-##');return soNumeros(event);"/>
+						</div>
+					</div>	
+				</div>
+											
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="sext" class="control-label"> Sexo: </label>
+							<select  id="sext" class="form-control">
+								<option value="valor1" selected>--Escolher sexo--</option>
+								<option  id = "masc" value="Masculino"> Masculino </option>
+								<option  id ="fem" value="Feminino"> Feminino </option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-1">
+					
+					</div>
+					<div class="col-md-3 col-md-offset-1">
+						<div class="form-group">
+							<label for="EstadC" class="control-label"> Estado Civil: </label>
+							<select  id="EstadC" class="form-control">
+								<option value="valor1" selected>--Escolher Opção--</option>
+								<option  id = "solt" value="Solteiro"> Solteiro(a) </option>
+								<option  id ="casad" value="Casado"> Casado(a) </option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-1">
+
+                    </div>					
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="telt" class="control-label"> Telefone: </label>
+							<input type="text" placeholder="Fone" class="form-control" size="15" id="telt" maxlength="12" onkeypress="mascara(this,'##-####-####'); return soNumeros(event)"/>
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="cep" class="control-label"> CEP: </label>
+							<input type="text" placeholder="CEP" class="form-control" size="80" id="cep" maxlength="9" onkeypress="mascara(this,'#####-###');return soNumeros(event)"/>
+						</div>
+					</div>
+					<div class="col-md-1">
+					
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="endt" class="control-label"> Endereco: </label>
+							<input type="text" placeholder="Endereço" class="form-control" size="80" id="endt"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-3">	
+						<div class="form-group">
+							<label for="bair"> Bairro: </label>
+							<input type="text" placeholder="Bairro" class="form-control" size="50" id="bair"/>
+						</div>
+					</div>
+					<div class="col-md-1">
+
+					</div>
+					<div class="col-md-3 col-md-offset-1">	
+						<div class="form-group">
+							<label for="estad"> Estado: </label>
+							<input type="text" placeholder="Estado" class="form-control" size="50" id="estad"/>
+						</div>
+					</div>
+					<div class="col-md-1">
+
+					</div>
+					<div class="col-md-3">	
+						<div class="form-group">
+							<label for="cidt"> Cidade: </label>
+							<input type="text" placeholder="Cidade" class="form-control" size="50" id="cidt"/>
+						</div>
+					</div>		
+				</div>
+								
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="emailt"> E-mail: </label>
+							<input type="text" placeholder="E-mail" class="form-control" size="40" id="emailt"/>
+						</div>
+					</div>
+					<div class="col-md-1">
+
+					</div>	
+					<div class="col-md-5">
+						<div class="form-group">
+							<label for="psw"> Senha: </label>
+							<input type="password" placeholder="Senha" class="form-control" size="15" id="psw" onkeypress="return tiraEspacoSenha(event)"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">	
+					<div class="col-md-3">	
+						<div class="form-group">	
+							<label for="ckb" class="control-label"> Receber promoções: </label>
+						</div>
+					</div>
+				</div>
+				<div class="row">	
+					<div class="col-md-3">	
+						<div class="form-group">	
+							<label class="control-label">Sim</label>
+							<input type="checkbox" id="ckb1" value="sim" onclick="msgCheck()"/>
+							<label class="control-label">Não</label>
+							<input type="checkbox" id="ckb2" value="não"/>
+						</div>
+					</div>
+				</div>
+					
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="txta"> Obs: </label>
+							<textarea id ="txta" class="form-control"></textarea>
+						</div>
+					</div>	
+				</div>
+				<div id="btn">	
+				<div class="form-group">
+					<div class="btn">
+						<input type="button" id="btnenviar" value="Enviar" onclick="validacao()" class="btn btn-success"/>
+						<input type="button" id="btnvalores" value="Valores" onclick="CarregarDados()" class="btn btn-warning"/>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="Container">
+				<div id="corpoTabela" class="col-md-12">
+					<table id="tabela" class="table table-bordered">
+						<tr>
+							<th>CPF</th>
+							<th>Nome</th>
+			            </tr>	
+				</table>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

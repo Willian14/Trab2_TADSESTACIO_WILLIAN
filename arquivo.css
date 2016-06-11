@@ -1,0 +1,41 @@
+#corpo{
+	
+	border: 10px ridge black; 
+	 background:rgba(0,0,0,0.2);
+	 border-radius: 10px;
+	
+}
+#form{
+	margin-left:70px;
+	margin-right:70px;
+	margin-bottom:50px;
+	margin-top:50px;
+}
+#txta{
+	height:150px;
+	border: solid 2px black;
+}
+#head{
+	text-align: center;
+}
+
+#sext{
+	border: solid 2px black;
+}
+.form-group input{
+	border: solid 2px black;
+}
+h1{
+	font-family: arial Impact,fantasy;
+}
+#EstadC{
+	border: solid 2px black;
+}
+#btn{
+	text-align: center;
+}
+#tabela{
+	border:2px solid black;
+	background-color: white;
+}
+
